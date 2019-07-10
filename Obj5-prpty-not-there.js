@@ -31,7 +31,7 @@ console.log(cTCode('craft block argon meter bell brown droop'));
 
 const sentenceCrack = function(str) {
     const words = str.split(' ');
-    console.log(words);
+    //console.log(words);
         let firstStr = '';
             for (let word of words) {
             firstStr += decipher(word);
@@ -41,28 +41,29 @@ const sentenceCrack = function(str) {
 
 
 const decipher = function(word) {
-    let countTo = letNum(word[0]);
+    let countTo = cipher(word[0]);
+    console.log(countTo);
     if(countTo === 0) {
         return ' ';
     }
-    return word[countTo-1];
+    return word[countTo - 1];
 }
 
 
 
-const decipher = function(letter) {
+const cipher = function(letter) {
     const letNum = {};
-    letNum['a'] = 1,
-    letNum['b'] = 2,
-    letNum['c'] = 3,
-    letNum['d'] = 4,
+    letNum['a'] = 2;
+    letNum['b'] = 3;
+    letNum['c'] = 4;
+    letNum['d'] = 5;
     if(letNum[letter] !== undefined) {
         return letNum[letter];
         } else  {
         return 0;
         }
 }
-
+console.log(sentenceCrack('craft block argon meter bells brown croon droop'));
 
 
 
